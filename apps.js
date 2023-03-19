@@ -10,8 +10,22 @@ function multiply(a,b){
 function divide(a,b){
     return a / b;
 }
-console.log(add(10, 5))
-console.log(subtract(10, 5))
-console.log(multiply(10, 5))
-console.log(divide(10, 5))
 
+
+function operate(operator, num1, num2){
+    switch (operator){
+        case '+':
+            score = add(num1, num2);
+            break;
+        case '-':
+            score = subtract(num1, num2);
+            break;
+        case '*':
+            score = multiply(num1, num2);
+            break;
+        case '/':
+            score = divide(num1, num2);
+            break
+    }
+    return score;
+}
