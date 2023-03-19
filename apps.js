@@ -13,6 +13,7 @@ function divide(a,b){
 
 
 function operate(operator, num1, num2){
+    let score;
     switch (operator){
         case '+':
             score = add(num1, num2);
@@ -29,3 +30,42 @@ function operate(operator, num1, num2){
     }
     return score;
 }
+
+let firstNum = '';
+let secondNum = '';
+let operator = '';
+const display = document.querySelector('#display');
+const numbers = document.querySelector('#numbers');
+numbers.addEventListener('click', function(e) {
+    if (e.target.classList.contains('numbers')){
+        if (operator === ''){
+            const temp = e.target.innerHTML;
+            display.innerHTML = temp;
+            firstNum += temp;
+            console.log(firstNum)
+        }
+        else {
+            const temp = e.target.innerHTML;
+            display.innerHTML = temp;
+            secondNum += temp;
+            console.log(secondNum)
+        }
+    }
+})
+
+const operators = document.querySelector('#operators');
+operators.addEventListener('click', function(e) {
+    if (e.target.classList.contains('operators')){
+        operator += e.target.innerHTML;
+        console.log(operator)
+    }
+})
+
+const equals = document.querySelector('#equals');
+equals.addEventListener('click', function(e) {
+    const score = operate(operator, parseInt(firstNum), parseInt(secondNum));
+    display.innerHTML = score;
+    firstNum = score;
+    secondNum = '';
+    operator = '';
+})
