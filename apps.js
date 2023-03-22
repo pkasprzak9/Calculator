@@ -40,13 +40,17 @@ numbers.addEventListener('click', function(e) {
     if (e.target.classList.contains('numbers')){
         if (operator === ''){
             const temp = e.target.innerHTML;
-            display.innerHTML = temp;
+            display.innerHTML += temp;
             firstNum += temp;
             console.log(firstNum)
         }
         else {
             const temp = e.target.innerHTML;
-            display.innerHTML = temp;
+            if (secondNum.length === 0) {
+                display.innerHTML = temp;
+            } else {
+                display.innerHTML += temp;
+            }
             secondNum += temp;
             console.log(secondNum)
         }
@@ -68,4 +72,22 @@ equals.addEventListener('click', function(e) {
     firstNum = score;
     secondNum = '';
     operator = '';
+})
+
+const allCLear = document.querySelector('#allClear');
+allCLear.addEventListener('click', function(e) {
+    display.innerHTML = '';
+    firstNum = '';
+    secondNum = '';
+    operator = '';
+})
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', function(e) {
+    display.innerHTML = '';
+    if (operator = ''){
+        firstNum = '';
+    }else {
+        secondNum = '';
+    }
 })
