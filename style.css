@@ -1,6 +1,6 @@
 html,
 body {
-    background-color: grey;
+    background-color:cadetblue;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -15,22 +15,31 @@ body {
     border-style: solid;
     flex-direction: column;
     align-items: center;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    background-color: black;
 }
 #up {
     width: 100%;
 }
 #display {
     min-height: 40px;
-    min-width: 100%;
-    background-color: white;
+    background-color: black;
+    border-style: solid;
+    color:orange;
+    padding-right: 5px;
+    padding-top: 2px;
     text-align: right;
     font-size: larger;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 #bottom {
     display: flex;
-    align-items: stretch;
     height: 100%;
+    margin: 5px 10px;
+    gap: 5px;
 }
 #numbers {
     display: flex;
@@ -42,6 +51,12 @@ body {
 .numbers {
     width: 33.33%;
     height: auto;
+    border-radius: 50px;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: orange;
+    background-color: black;
+    color: orange;
 }
 #zero {
     flex-grow: 1;
@@ -54,6 +69,12 @@ flex-wrap: wrap;
 }
 .operators {
     width: 50%;
+    border-radius: 50px;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: orange;
+    background-color: black;
+    color: orange;
 }
 #equals {
     flex-grow: 1;
@@ -62,8 +83,15 @@ flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     order: -1;
+    gap: 2px;
 }
 .clears{
     width: 100%;
     height: 100%;
+    border-radius: 50px;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: orange;
+    background-color: black;
+    color: orange;
 }
