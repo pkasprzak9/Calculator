@@ -79,9 +79,9 @@ flex-wrap: wrap;
     border-radius: 50px;
     font-weight: bolder;
     border-style: solid;
-    border-color: orange;
+    border-color: cadetblue;
     background-color: black;
-    color: orange;
+    color: cadetblue;
 }
 .operators:hover{
     background-color:cadetblue;
@@ -112,13 +112,13 @@ flex-wrap: wrap;
     border-radius: 50px;
     font-weight: bolder;
     border-style: solid;
-    border-color: orange;
+    border-color: cadetblue;
     background-color: black;
-    color: orange;
+    color: cadetblue;
 }
 .clears:hover{
-    background-color: orange;
+    background-color: cadetblue;
     border-style: solid;
-    border-color: orange;
+    border-color: cadetblue;
     color: black;
 }

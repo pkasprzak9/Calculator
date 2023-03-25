@@ -33,6 +33,13 @@ operators.addEventListener('click', function(e) {
         if (result !== null && secondNum === '') {
             firstNum = result; // Use the result of the previous calculation as the first number
         }
+        if (firstNum !== '' && secondNum !== ''){
+            result = operate(operator, parseInt(firstNum), parseInt(secondNum))
+            display.innerHTML = result;
+            firstNum = result;
+            secondNum = '';
+            result = null;
+        }
         operator = e.target.innerHTML;
     }
 });
@@ -60,7 +67,9 @@ clear.addEventListener('click', function(e) {
     display.innerHTML = '';
     if (operator === '') {
         firstNum = '';
+        display.innerHTML = '0'
     } else {
+        operator = '';
         secondNum = '';
     }
 });
