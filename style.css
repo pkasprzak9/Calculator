@@ -19,6 +19,7 @@ body {
     padding-bottom: 10px;
     background-color: black;
 }
+
 #up {
     width: 100%;
 }
@@ -76,9 +77,11 @@ flex-wrap: wrap;
     background-color: black;
     color: orange;
 }
+
 #equals {
     flex-grow: 1;
 }
+
 #clears {
     display: flex;
     flex-direction: column;

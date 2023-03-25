@@ -1,54 +1,21 @@
-function add(a,b){
-    return a + b;
-}
-function subtract(a,b){
-    return a - b;
-}
-function multiply(a,b){
-    return a * b;
-}
-function divide(a,b){
-    return a / b;
-}
-
-
-function operate(operator, num1, num2){
-    let score;
-    switch (operator){
-        case '+':
-            score = add(num1, num2);
-            break;
-        case '-':
-            score = subtract(num1, num2);
-            break;
-        case '*':
-            score = multiply(num1, num2);
-            break;
-        case '/':
-            score = divide(num1, num2);
-            break
-    }
-    return score;
-}
-
 let firstNum = '';
 let secondNum = '';
 let operator = '';
+let result = null; // Keep track of the result of the previous calculation
+
 const display = document.querySelector('#display');
 const numbers = document.querySelector('#numbers');
 numbers.addEventListener('click', function(e) {
-    if (e.target.classList.contains('numbers')){
-        if (operator === ''){
+    if (e.target.classList.contains('numbers')) {
+        if (operator === '') {
             const temp = e.target.innerHTML;
-            if (display.innerHTML == 0){
+            if (display.innerHTML == 0) {
                 display.innerHTML = temp;
-            }else {
+            } else {
                 display.innerHTML += temp;
             }
             firstNum += temp;
-            console.log(firstNum)
-        }
-        else {
+        } else {
             const temp = e.target.innerHTML;
             if (secondNum.length === 0) {
                 display.innerHTML = temp;
@@ -56,42 +23,56 @@ numbers.addEventListener('click', function(e) {
                 display.innerHTML += temp;
             }
             secondNum += temp;
-            console.log(secondNum)
         }
     }
-})
+});
 
 const operators = document.querySelector('#operators');
 operators.addEventListener('click', function(e) {
-    if (e.target.classList.contains('operators')){
-        operator += e.target.innerHTML;
-        console.log(operator)
+    if (e.target.classList.contains('operators')) {
+        if (result !== null && secondNum === '') {
+            firstNum = result; // Use the result of the previous calculation as the first number
+        }
+        operator = e.target.innerHTML;
     }
-})
+});
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', function(e) {
-    const score = operate(operator, parseInt(firstNum), parseInt(secondNum));
+    let score = operate(operator, parseInt(firstNum), parseInt(secondNum)); // Calculate the result using the operate function
+    result = score; // Store the result of the calculation
     display.innerHTML = score;
-    firstNum = score;
     secondNum = '';
     operator = '';
-})
+});
 
-const allCLear = document.querySelector('#allClear');
-allCLear.addEventListener('click', function(e) {
+const allClear = document.querySelector('#allClear');
+allClear.addEventListener('click', function(e) {
     display.innerHTML = '0';
     firstNum = '';
     secondNum = '';
     operator = '';
-})
+    result = null; // Clear the result
+});
 
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', function(e) {
     display.innerHTML = '';
-    if (operator = ''){
+    if (operator === '') {
         firstNum = '';
-    }else {
+    } else {
         secondNum = '';
     }
-})
+});
+
+function operate(operator, num1, num2) {
+    if (operator === '+') {
+        return num1 + num2;
+    } else if (operator === '-') {
+        return num1 - num2;
+    } else if (operator === '*') {
+        return num1 * num2;
+    } else if (operator === '/') {
+        return num1 / num2;
+    }
+}
