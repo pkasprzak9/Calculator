@@ -40,7 +40,11 @@ numbers.addEventListener('click', function(e) {
     if (e.target.classList.contains('numbers')){
         if (operator === ''){
             const temp = e.target.innerHTML;
-            display.innerHTML += temp;
+            if (display.innerHTML == 0){
+                display.innerHTML = temp;
+            }else {
+                display.innerHTML += temp;
+            }
             firstNum += temp;
             console.log(firstNum)
         }
@@ -76,7 +80,7 @@ equals.addEventListener('click', function(e) {
 
 const allCLear = document.querySelector('#allClear');
 allCLear.addEventListener('click', function(e) {
-    display.innerHTML = '';
+    display.innerHTML = '0';
     firstNum = '';
     secondNum = '';
     operator = '';
