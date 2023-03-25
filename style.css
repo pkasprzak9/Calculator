@@ -59,6 +59,12 @@ body {
     background-color: black;
     color: orange;
 }
+.numbers:hover{
+    background-color: orange;
+    border-style: solid;
+    border-color: orange;
+    color: black;
+}
 #zero {
     flex-grow: 1;
 }
@@ -77,9 +83,21 @@ flex-wrap: wrap;
     background-color: black;
     color: orange;
 }
+.operators:hover{
+    background-color:cadetblue;
+    border-style: solid;
+    border-color: cadetblue;
+    color: black;
+}
 
 #equals {
     flex-grow: 1;
+}
+#equals:hover {
+    background-color: cadetblue;
+    border-style: solid;
+    border-color: cadetblue;
+    color: black;
 }
 
 #clears {
@@ -97,4 +115,10 @@ flex-wrap: wrap;
     border-color: orange;
     background-color: black;
     color: orange;
+}
+.clears:hover{
+    background-color: orange;
+    border-style: solid;
+    border-color: orange;
+    color: black;
 }
